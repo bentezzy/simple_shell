@@ -58,23 +58,23 @@ char *_getenv(const char *name, char **_environ)
 /**
  * _env - prints the evironment variables
  *
- * @datash: data relevant.
+ * @data_rel: data relevant.
  * Return: 1 on success.
  */
-int _env(data_shell *datash)
+int _env(data_shell *data_rel)
 {
 	int i, j;
 
-	for (i = 0; datash->_environ[i]; i++)
+	for (i = 0; data_rel->_environ[i]; i++)
 	{
 
-		for (j = 0; datash->_environ[i][j]; j++)
+		for (j = 0; data_rel->_environ[i][j]; j++)
 			;
 
-		write(STDOUT_FILENO, datash->_environ[i], j);
+		write(STDOUT_FILENO, data_rel->_environ[i], j);
 		write(STDOUT_FILENO, "\n", 1);
 	}
-	datash->status = 0;
+	data_rel->status = 0;
 
 	return (1);
 }
