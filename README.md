@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 SIMPLE SHELL GROUP PROJECT
 
 In this project, my partner and I were creating a miniature Simple shell that does simple commands;
@@ -64,3 +65,6 @@ hsh main.c shell.c test_ls_2
 hsh main.c shell.c test_ls_2
 $
 
+=======
+0x16. C - Simple Shell
+>>>>>>> 7d41c5f0a9d4328a4c46f8dd8ed8eef00736fd36
