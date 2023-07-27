@@ -52,12 +52,10 @@ void set_env(char *name, char *value, data_shell *data_rel)
 		free(var_env);
 	}
 
-<<<<<<< HEAD
-	data_rel->_environ = _realloc_d(data_rel->_environ, i, sizeof(char *) * (i + 2));
-=======
-	data_rel->_environ = _reallocdp(data_rel->_environ, i,
-	sizeof(char *) * (i + 2));
->>>>>>> 6f74a07dc49a74f0bb26028bbbcde18a2eba1aeb
+
+	data_rel->_environ = _realloc_d(data_rel->_environ, i,
+			sizeof(char *) * (i + 2));
+
 	data_rel->_environ[i] = copy_info(name, value);
 	data_rel->_environ[i + 1] = NULL;
 }
@@ -77,12 +75,12 @@ int _setenv(data_shell *data_rel)
 		get_error(data_rel, -1);
 		return (1);
 	}
-<<<<<<< HEAD
+
 
 	set_env(data_rel->args[1], data_rel->args[2], data_rel);
-=======
-	set_env(data_rel->args[1], data-rel->args[2], data_rel);
->>>>>>> 6f74a07dc49a74f0bb26028bbbcde18a2eba1aeb
+
+	set_env(data_rel->args[1], data_rel->args[2], data_rel);
+
 
 	return (1);
 }
@@ -131,13 +129,9 @@ int _unsetenv(data_shell *data_rel)
 		}
 	}
 	realloc_environ[j] = NULL;
-<<<<<<< HEAD
+
 	free(data_rel->_environ[k]);
 	free(data_rel->_environ);
-=======
-	free(dat_rel->_environ[k]);
-	free(dat_rel->_environ);
->>>>>>> 6f74a07dc49a74f0bb26028bbbcde18a2eba1aeb
 	data_rel->_environ = realloc_environ;
 	return (1);
 }
