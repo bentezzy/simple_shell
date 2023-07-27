@@ -47,7 +47,7 @@ void set_data(data_shell *data_rel, char **av)
 	}
 
 	data_rel->_environ[i] = NULL;
-	data_rel->pid = my_itoa(getpid());
+	data_rel->pid = aux_itoa(getpid());
 }
 
 /**

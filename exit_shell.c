@@ -3,8 +3,7 @@
 /**
  * exec_line - finds builtins and commands
  *
- * @datash: data relevant (args)
- * @atoi: converts string to integer
+ * @data_rel: data relevant (args)
  * parsed command line
  * Return: 1 on success.
  */
