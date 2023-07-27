@@ -63,7 +63,7 @@ void shell_loop(data_shell *data_rel)
 				free(input);
 				continue;
 			}
-			input = rep_var(input, data-rel);
+			input = rep_var(input, data_rel);
 			loop = split_commands(data_rel, input);
 			data_rel->counter += 1;
 			free(input);

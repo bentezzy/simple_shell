@@ -9,21 +9,21 @@ int get_help(data_shell *data_rel)
 {
 
 	if (data_rel->args[1] == 0)
-		aux_help_general();
+		my_help_general();
 	else if (_strcmp(data_rel->args[1], "setenv") == 0)
-		aux_help_setenv();
+		my_help_setenv();
 	else if (_strcmp(data_rel->args[1], "env") == 0)
-		aux_help_env();
+		my_help_env();
 	else if (_strcmp(data_rel->args[1], "unsetenv") == 0)
-		aux_help_unsetenv();
+		my_help_unsetenv();
 	else if (_strcmp(data_rel->args[1], "help") == 0)
-		aux_help();
+		my_help();
 	else if (_strcmp(data_rel->args[1], "exit") == 0)
-		aux_help_exit();
+		my_help_exit();
 	else if (_strcmp(data_rel->args[1], "cd") == 0)
-		aux_help_cd();
+		my_help_cd();
 	else if (_strcmp(data_rel->args[1], "alias") == 0)
-		aux_help_alias();
+		my_help_alias();
 	else
 		write(STDERR_FILENO, data_rel->args[0],
 		      _strlen(data_rel->args[0]));

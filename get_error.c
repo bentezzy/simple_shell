@@ -15,8 +15,8 @@ int get_error(data_shell *data_rel, int eval)
 	case -1:
 		error = error_env(data_rel);
 		break;
-	case 126:
-		error = error_path_126(data_rel);
+	case 100:
+		error = error_path_100(data_rel);
 		break;
 	case 127:
 		error = error_not_found(data_rel);
@@ -25,7 +25,7 @@ int get_error(data_shell *data_rel, int eval)
 		if (_strcmp("exit", data_rel->args[0]) == 0)
 			error = error_exit_shell(data_rel);
 		else if (_strcmp("cd", data_rel->args[0]) == 0)
-			error = error_get_cd(datash);
+			error = error_get_dir(data_rel);
 		break;
 	}
 

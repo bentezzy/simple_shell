@@ -6,7 +6,7 @@
  * @data_rel: data structure
  * Return: no return
  */
-void free_data(data_shell *datash)
+void free_data(data_shell *data_rel)
 {
 	unsigned int i;
 
@@ -47,7 +47,7 @@ void set_data(data_shell *data_rel, char **av)
 	}
 
 	data_rel->_environ[i] = NULL;
-	data_yet->pid = aux_itoa(getpid());
+	data_rel->pid = my_itoa(getpid());
 }
 
 /**
@@ -66,7 +66,7 @@ int main(int ac, char **av)
 	signal(SIGINT, get_sigint);
 	set_data(&data_rel, av);
 	shell_loop(&data_rel);
-	free_data(&dat_rel);
+	free_data(&data_rel);
 	if (data_rel.status < 0)
 		return (255);
 	return (data_rel.status);

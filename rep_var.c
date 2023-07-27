@@ -8,7 +8,7 @@
  * @data: data structure
  * Return: no return
  */
-void check_env(r_var **h, char *in, data_shell *data)
+void check_envr(r_var **h, char *in, data_shell *data)
 {
 	int row, chr, j, lval;
 	char **_envr;
@@ -21,7 +21,7 @@ void check_env(r_var **h, char *in, data_shell *data)
 			if (_envr[row][chr] == '=')
 			{
 				lval = _strlen(_envr[row] + chr + 1);
-				add_rvar_node(h, j, _envr[row] + chr + 1, lval);
+				_rvar_node(h, j, _envr[row] + chr + 1, lval);
 				return;
 			}
 
@@ -38,7 +38,7 @@ void check_env(r_var **h, char *in, data_shell *data)
 			break;
 	}
 
-	add_rvar_node(h, j, NULL, 0);
+	_rvar_node(h, j, NULL, 0);
 }
 
 /**
@@ -62,19 +62,19 @@ int check_vars(r_var **h, char *in, char *st, data_shell *data)
 		if (in[i] == '$')
 		{
 			if (in[i + 1] == '?')
-				add_rvar_node(h, 2, st, lst), i++;
+				_rvar_node(h, 2, st, lst), i++;
 			else if (in[i + 1] == '$')
-				add_rvar_node(h, 2, data->pid, lpd), i++;
+				_rvar_node(h, 2, data->pid, lpd), i++;
 			else if (in[i + 1] == '\n')
-				add_rvar_node(h, 0, NULL, 0);
+				_rvar_node(h, 0, NULL, 0);
 			else if (in[i + 1] == '\0')
-				add_rvar_node(h, 0, NULL, 0);
+				_rvar_node(h, 0, NULL, 0);
 			else if (in[i + 1] == ' ')
-				add_rvar_node(h, 0, NULL, 0);
+				_rvar_node(h, 0, NULL, 0);
 			else if (in[i + 1] == '\t')
-				add_rvar_node(h, 0, NULL, 0);
+				_rvar_node(h, 0, NULL, 0);
 			else if (in[i + 1] == ';')
-				add_rvar_node(h, 0, NULL, 0);
+				_rvar_node(h, 0, NULL, 0);
 			else
 				check_env(h, in + i, data);
 		}
@@ -148,7 +148,7 @@ char *rep_var(char *input, data_shell *data_rel)
 	char *status, *new_input;
 	int olen, nlen;
 
-	status = aux_itoa(data_rel->status);
+	status = my_itoa(data_rel->status);
 	head = NULL;
 
 	olen = check_vars(&head, input, status, data_rel);

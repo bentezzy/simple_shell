@@ -61,11 +61,11 @@ void add_nodes(sep_list **head_s, line_list **head_l, char *input)
 	for (i = 0; input[i]; i++)
 	{
 		if (input[i] == ';')
-			add_sep_node_end(head_s, input[i]);
+			_sep_node_end(head_s, input[i]);
 
 		if (input[i] == '|' || input[i] == '&')
 		{
-			add_sep_node_end(head_s, input[i]);
+			_sep_node_end(head_s, input[i]);
 			i++;
 		}
 	}
@@ -73,7 +73,7 @@ void add_nodes(sep_list **head_s, line_list **head_l, char *input)
 	line = _strtok(input, ";|&");
 	do {
 		line = swap_char(line, 1);
-		add_line_node_end(head_l, line);
+		_line_node_end(head_l, line);
 		line = _strtok(NULL, ";|&");
 	} while (line != NULL);
 
@@ -147,8 +147,8 @@ int split_commands(data_shell *data_rel, char *input)
 	while (list_l != NULL)
 	{
 		data_rel->input = list_l->line;
-		data_rel->args = split_line(datash->input);
-		loop = exec_line(datash);
+		data_rel->args = split_line(data_rel->input);
+		loop = exec_line(data_rel);
 		free(data_rel->args);
 
 		if (loop == 0)
@@ -197,7 +197,7 @@ char **split_line(char *input)
 		if (i == bsize)
 		{
 			bsize += TOK_BUFSIZE;
-			tokens = _reallocdp(tokens, i, sizeof(char *) * bsize);
+			tokens = _realloc_d(tokens, i, sizeof(char *) * bsize);
 			if (tokens == NULL)
 			{
 				write(STDERR_FILENO, ": allocation error\n", 18);

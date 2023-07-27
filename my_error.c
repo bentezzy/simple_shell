@@ -23,7 +23,7 @@ char *strcat_dir(data_shell *data_rel, char *mess, char *error, char *count)
 	{
 		irrelevant_flag = malloc(3);
 		irrelevant_flag[0] = '-';
-		irrelevant_flag[1] = datash->args[1][1];
+		irrelevant_flag[1] = data_rel->args[1][1];
 		irrelevant_flag[2] = '\0';
 		_strcat(error, irrelevant_flag);
 		free(irrelevant_flag);
@@ -48,7 +48,7 @@ char *error_get_dir(data_shell *data_rel)
 	int leng, leng_id;
 	char *error, *count, *mess;
 
-	count = aux_itoa(data_rel->counter);
+	count = my_itoa(data_rel->counter);
 	if (data_rel->args[1][0] == '-')
 	{
 		mess = ": Irrelevant option ";
@@ -88,7 +88,7 @@ char *error_not_found(data_shell *data_rel)
 	char *error;
 	char *count;
 
-	count = aux_itoa(data_rel->counter);
+	count = my_itoa(data_rel->counter);
 	leng = _strlen(data_rel->av[0]) + _strlen(count);
 	leng += _strlen(data_rel->args[0]) + 16;
 	error = malloc(sizeof(char) * (leng + 1));
@@ -121,8 +121,8 @@ char *error_exit_shell(data_shell *data_rel)
 	char *error;
 	char *count;
 
-	count = aux_itoa(data_rel->counter);
-	leng = _strlen(data_rel->av[0]) + _strlen(ver_str);
+	count = my_itoa(data_rel->counter);
+	leng = _strlen(data_rel->av[0]) + _strlen(count);
 	leng += _strlen(data_rel->args[0]) + _strlen(data_rel->args[1]) + 23;
 	error = malloc(sizeof(char) * (leng + 1));
 	if (error == 0)

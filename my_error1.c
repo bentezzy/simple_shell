@@ -12,7 +12,7 @@ char *error_environ(data_shell *data_rel)
 	char *count;
 	char *mess;
 
-	count = aux_itoa(data_rel->counter);
+	count = my_itoa(data_rel->counter);
 	mess = ": Unable to add/remove from environment\n";
 	leng = _strlen(data_rel->av[0]) + _strlen(count);
 	leng += _strlen(data_rel->args[0]) + _strlen(mess) + 4;
@@ -47,7 +47,7 @@ char *error_path_100(data_shell *data_rel)
 	char *count;
 	char *error;
 
-	count = aux_itoa(data_rel->counter);
+	count = my_itoa(data_rel->counter);
 	leng = _strlen(data_rel->av[0]) + _strlen(count);
 	leng += _strlen(data_rel->args[0]) + 24;
 	error = malloc(sizeof(char) * (leng + 1));
