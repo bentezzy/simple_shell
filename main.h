@@ -6,7 +6,7 @@
  * @data_rel: data structure
  * Return: no return
  */
-void free_data(data_shell *datash)
+void free_data(data_shell *data_rel)
 {
 	unsigned int i;
 
