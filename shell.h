@@ -95,7 +95,7 @@ typedef struct builtin_s
 /* mini_lists.c */
 sep_list *_sep_node_end(sep_list **head, char sep);
 void free_sep_list(sep_list **head);
-line_list *_line_node_end(line_list **head, char *line);
+line_list *my_line_node_end(line_list **head, char *line);
 void free_line_list(line_list **head);
 
 /* my_lists.c */
@@ -122,7 +122,7 @@ char *_strtok(char str[], const char *delim);
 int _isdigit(const char *s);
 
 /* my_strng.c */
-void reverse_str(char *s);
+void rev_string(char *s);
 
 /* syntax.c */
 int repeated_char(char *input, int i);
