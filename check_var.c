@@ -8,7 +8,7 @@
  * @data: data structure
  * Return: no return
  */
-void check_envr(r_var **h, char *in, data_shell *data)
+void check_env(r_var **h, char *in, data_shell *data)
 {
 	int row, chr, j, lval;
 	char **_envr;

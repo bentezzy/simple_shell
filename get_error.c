@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * get_error - calls the error according the builtin, syntax or permission
+ * get_error -fun tht  calls the error according the builtin
  * @data_rel: data structure that contains arguments
  * @eval: error value
  * Return: error
@@ -15,8 +15,8 @@ int get_error(data_shell *data_rel, int eval)
 	case -1:
 		error = error_env(data_rel);
 		break;
-	case 100:
-		error = error_path_100(data_rel);
+	case 126:
+		error = error_path_126(data_rel);
 		break;
 	case 127:
 		error = error_not_found(data_rel);

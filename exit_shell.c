@@ -1,23 +1,31 @@
 #include "shell.h"
 
 /**
- * exec_line - finds builtins and commands
+ * exit_shell -fun tht  exits the shell
  *
- * @data_rel: data relevant (args)
- * parsed command line
- * Return: 1 on success.
+ * @data_rel: data relevant (status and args)
+ * Return: 0 on success.
  */
-int exec_line(data_shell *data_rel)
+int exit_shell(data_shell *data_rel)
 {
-	int (*builtin)(data_shell *data_rel);
+	unsigned int ustatus;
+	int is_digit;
+	int str_len;
+	int big_number;
 
-	if (data_rel->args[0] == NULL)
-		return (1);
-
-	builtin = get_builtin(data_rel->args[0]);
-
-	if (builtin != NULL)
-		return (builtin(data_rel));
-
-	return (cmd_exec(data_rel));
+	if (data_rel->args[1] != NULL)
+	{
+		ustatus = _atoi(data_rel->args[1]);
+		is_digit = _isdigit(data_rel->args[1]);
+		str_len = _strlen(data_rel->args[1]);
+		big_number = ustatus > (unsigned int)INT_MAX;
+		if (!is_digit || str_len > 10 || big_number)
+		{
+			get_error(data_rel, 2);
+			data_rel->status = 2;
+			return (1);
+		}
+		data_rel->status = (ustatus % 256);
+	}
+	return (0);
 }

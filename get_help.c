@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
- * get_help - function that retrieves help messages according builtin
+ * get_help - fun that retrieves help messages according builtin
  * @data_rel: data structure (args and input)
- * Return: Return 0
+ * Return: Return 1
 */
 int get_help(data_shell *data_rel)
 {

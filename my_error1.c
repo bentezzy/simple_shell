@@ -5,7 +5,7 @@
  * @data_rel: data relevant (counter, arguments)
  * Return: error message.
  */
-char *error_environ(data_shell *data_rel)
+char *error_env(data_shell *data_rel)
 {
 	int leng;
 	char *error;
@@ -36,12 +36,12 @@ char *error_environ(data_shell *data_rel)
 	return (error);
 }
 /**
- * error_path_100 - error message for path and failure denied permission.
+ * error_path_126 - error message for path and failure denied permission.
  * @data_rel: data relevant (counter, arguments).
  *
  * Return: error string.
  */
-char *error_path_100(data_shell *data_rel)
+char *error_path_126(data_shell *data_rel)
 {
 	int leng;
 	char *count;
