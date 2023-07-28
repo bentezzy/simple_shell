@@ -206,7 +206,7 @@ char *error_get_alias(char **args);
 char *error_env(data_shell *data_rel);
 char *error_syntax(char **args);
 char *error_permission(char **args);
-char *error_path_100(data_shell *data_rel);
+char *error_path_126(data_shell *data_rel);
 
 
 /* get_error.c */

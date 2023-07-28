@@ -5,14 +5,14 @@
  * @data_rel: data relevant (counter, arguments)
  * Return: error message.
  */
-char *error_environ(data_shell *data_rel)
+char *error_env(data_shell *data_rel)
 {
 	int leng;
 	char *error;
 	char *count;
 	char *mess;
 
-	count = aux_itoa(data_rel->counter);
+	count = my_itoa(data_rel->counter);
 	mess = ": Unable to add/remove from environment\n";
 	leng = _strlen(data_rel->av[0]) + _strlen(count);
 	leng += _strlen(data_rel->args[0]) + _strlen(mess) + 4;
@@ -36,18 +36,18 @@ char *error_environ(data_shell *data_rel)
 	return (error);
 }
 /**
- * error_path_100 - error message for path and failure denied permission.
+ * error_path_126 - error message for path and failure denied permission.
  * @data_rel: data relevant (counter, arguments).
  *
  * Return: error string.
  */
-char *error_path_100(data_shell *data_rel)
+char *error_path_126(data_shell *data_rel)
 {
 	int leng;
 	char *count;
 	char *error;
 
-	count = aux_itoa(data_rel->counter);
+	count = my_itoa(data_rel->counter);
 	leng = _strlen(data_rel->av[0]) + _strlen(count);
 	leng += _strlen(data_rel->args[0]) + 24;
 	error = malloc(sizeof(char) * (leng + 1));

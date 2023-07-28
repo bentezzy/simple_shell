@@ -4,7 +4,7 @@
  * my_help_environ - Help info for the builtin environ
  * Return: no return
  */
-void my_help_environ(void)
+void my_help_env(void)
 {
 	char *help = "environ: environ [option] [name=value] [command [args]]\n\t";
 
